@@ -1,0 +1,6 @@
+[package]
+name = "project-euler-rust"
+version = "0.1.0"
+authors = ["Matthew Simpson <matthew@matthewsimpson.net>"]
+
+[dependencies]
