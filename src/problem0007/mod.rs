@@ -6,7 +6,14 @@ pub fn main() -> u32 {
     while primes.len() < nth {
         let mut is_prime = true;
 
+        let sqrt = (current as f64).sqrt() as u32;
         for test in &primes {
+//          No point in testing if we've gone past the square root
+            if test > &sqrt {
+                break;
+            }
+
+//          Stop testing once we find a factor
             if current % test == 0 {
                 is_prime = false;
                 break;
