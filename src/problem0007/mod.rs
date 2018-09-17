@@ -7,9 +7,9 @@ pub fn main() -> u32 {
         let mut is_prime = true;
 
         let sqrt = (current as f64).sqrt() as u32;
-        for test in &primes {
+        for &test in &primes {
 //          No point in testing if we've gone past the square root
-            if test > &sqrt {
+            if test > sqrt {
                 break;
             }
 
