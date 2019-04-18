@@ -3,20 +3,8 @@ pub fn main() -> i32 {
     let mut numbers :Vec<i32> = vec![1, 2];
 
     while numbers.iter().max() < Some(&4000000) {
-        let new = numbers[numbers.len() - 1] + numbers[numbers.len() - 2];
-        numbers.push(new );
+        numbers.push(numbers[numbers.len() - 1] + numbers[numbers.len() - 2]);
     }
 
-    let mut total:i32 = 0;
-    for number in numbers {
-        if is_even(number) {
-            total += number;
-        }
-    }
-
-    return total;
-}
-
-fn is_even(value:i32) -> bool {
-    return value % 2 == 0;
+    return numbers.iter().filter(|&x| x % 2 == 0).fold(0, |sum, number| sum + number)
 }
