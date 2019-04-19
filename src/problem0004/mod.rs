@@ -1,15 +1,16 @@
 pub fn main() -> u32 {
-    let mut palindromes :Vec<u32> = vec![];
+    let mut answer:u32 = 0;
 
-    for x in 100..999 {
-        for y in 100..999 {
-            if is_palindrome(x * y) {
-                palindromes.push(x * y);
+    for x in (100..999).rev() {
+        for y in (x..999).rev() {
+            let mut current = x * y;
+            if is_palindrome(current) && current > answer {
+                answer = current;
             }
         }
     }
 
-    return *palindromes.iter().max().unwrap();
+    return answer;
 }
 
 fn is_palindrome(value:u32) -> bool {
