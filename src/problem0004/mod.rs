@@ -1,3 +1,5 @@
+use std::cmp;
+
 pub fn main() -> u32 {
     let mut answer:u32 = 0;
 
@@ -9,10 +11,7 @@ pub fn main() -> u32 {
         for y in (100..999).rev() {
             let mut current = x * y;
             if is_palindrome(current) {
-                if current > answer {
-                    answer = current;
-                }
-
+                answer = cmp::max(answer, current);
                 break;
             }
         }
