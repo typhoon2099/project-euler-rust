@@ -28,5 +28,5 @@ pub fn max_tree_path(tree:&Vec<Vec<u32>>) -> u32 {
         }
     }
 
-    tree[0][0]
+    working_tree[0][0]
 }
