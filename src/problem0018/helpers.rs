@@ -20,29 +20,13 @@ pub fn get_tree(filename:&str) -> Vec<Vec<u32>> {
 }
 
 pub fn max_tree_path(tree:&Vec<Vec<u32>>) -> u32 {
-    // Start at the bottom, and work up, storing the largest path for each previous row
+    let mut working_tree:Vec<Vec<u32>> = tree.clone();
 
-    let mut working_tree:Vec<Vec<u32>> = vec![];
-
-    for (row_index, row) in tree.iter().rev().enumerate() {
-        println!("Row {}", row_index);
-
-        println!("working_tree in {} long", working_tree.len());
-        if row_index == 0 {
-            // Push the row as is if it's the first one
-            working_tree.push(row.clone());
-        } else {
-            let prev_row = working_tree.last().unwrap().clone();
-
-            let mut working_row:Vec<u32> = vec![];
-            for (column_index, value) in row.iter().enumerate() {
-                println!("{}: {} or {}", value, prev_row[column_index], prev_row[column_index + 1]);
-                working_row.push(cmp::max(value + prev_row[column_index], value + prev_row[column_index + 1]))
-            }
-
-            working_tree.push(working_row);
+    for row_index in (1..working_tree.len()).rev() {
+        for column_index in (1..working_tree[row_index].len()).rev() {
+            working_tree[row_index - 1][column_index - 1] += cmp::max(working_tree[row_index][column_index - 1], working_tree[row_index][column_index])
         }
     }
 
-    *working_tree.last().unwrap().last().unwrap()
+    tree[0][0]
 }
