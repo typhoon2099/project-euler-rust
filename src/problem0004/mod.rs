@@ -17,11 +17,11 @@ pub fn main() -> u32 {
         }
     }
 
-    return answer;
+    answer
 }
 
 fn is_palindrome(value:u32) -> bool {
     let string = value.to_string();
 
-    return string.eq(&string.chars().rev().collect::<String>());
+    string.eq(&string.chars().rev().collect::<String>())
 }

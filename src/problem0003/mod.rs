@@ -15,5 +15,5 @@ pub fn main() -> u32 {
     }
 
     let &max :&u64 = primes.iter().max().unwrap();
-    return max as u32;
+    max as u32
 }

@@ -27,5 +27,5 @@ pub fn main() -> u32 {
         current += 1
     }
 
-    return primes[nth - 1];
+    primes[nth - 1]
 }

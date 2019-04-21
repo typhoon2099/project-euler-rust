@@ -7,5 +7,5 @@ pub fn main() -> i32 {
         numbers.push(value);
     }
 
-    return numbers.iter().filter(|&x| x % 2 == 0).fold(0, |sum, number| sum + number)
+    numbers.iter().filter(|&x| x % 2 == 0).fold(0, |sum, number| sum + number)
 }
