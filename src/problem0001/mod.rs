@@ -7,5 +7,5 @@ pub fn main() -> u32 {
         }
     }
 
-    return sum;
+    sum
 }
