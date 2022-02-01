@@ -9,7 +9,7 @@ pub fn main() -> u32 {
         }
 
         for y in (100..999).rev() {
-            let mut current = x * y;
+            let current = x * y;
             if is_palindrome(current) {
                 answer = cmp::max(answer, current);
                 break;
