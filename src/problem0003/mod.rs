@@ -14,6 +14,6 @@ pub fn main() -> u32 {
         }
     }
 
-    let &max :&u64 = primes.iter().max().unwrap();
-    max as u32
+    let max :u64 = *primes.iter().max().unwrap();
+    max as u32;
 }
