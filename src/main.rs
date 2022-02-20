@@ -1,4 +1,14 @@
+#![warn(
+bad_style,
+unused,
+unused_extern_crates,
+unused_import_braces,
+unused_qualifications,
+unused_results
+)]
+
 mod helpers;
+mod primes;
 mod problem0001;
 mod problem0002;
 mod problem0003;
